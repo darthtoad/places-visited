@@ -1,5 +1,15 @@
+function Location(place, date, activites, sleep, other) {
+  this.place = place;
+  this.date = date;
+  this.activites = activites;
+  this.sleep = sleep;
+  this.other = other;
+}
 
+Location.prototype.listLocation = function() {
+  return this.place + "<br>" + this.date + "<br>" + this.activites + "<br>" + this.sleep + "<br>" + this.other + "<br>";
 
+}
 
 
 
@@ -22,7 +32,7 @@ $(document).ready(function() {
     $("ul#output").append("<li><span class='stuff'>" + newLocation.listLocation() + "</span></li>")
 
     $(".stuff").last().click(function() {
-      $(".showlocation").show();
+      $(".locationlist ").show();
       $("#output .showlocation h2").text(newLocation.place);
       $("#dateoutput").text(newLocation.date);
       $("#activitiesoutput").text(newLocation.activities);
