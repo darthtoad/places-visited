@@ -11,14 +11,8 @@ Location.prototype.listLocation = function() {
 
 }
 
-
-
-
-
-
-
 $(document).ready(function() {
-  $("form#theform").submit(function(event){
+  $("form#theform").submit(function(event) {
     event.preventDefault();
 
     var place = $("input#place").val();
@@ -26,18 +20,25 @@ $(document).ready(function() {
     var activities = $("input#activities").val();
     var sleep = $("input#sleep").val();
     var other = $("input#other").val();
-
+    console.log(place);
     var newLocation = new Location(place, date, activities, sleep, other);
+    console.log(newLocation);
 
-    $("ul#output").append("<li><span class='stuff'>" + newLocation.listLocation() + "</span></li>")
+    $("#output").append("<li><span class='stuff'>" + newLocation.listLocation() + "</span></li>");
 
     $(".stuff").last().click(function() {
-      $(".locationlist ").show();
-      $("#output .showlocation h2").text(newLocation.place);
-      $("#dateoutput").text(newLocation.date);
-      $("#activitiesoutput").text(newLocation.activities);
-      $("#sleepoutput").text(newLocation.sleep);
-      $("#otheroutput").text(newLocation.other);
-    })
+      $(".locationlist").show();
+      $("#output h2").text(newLocation.place);
+      $("#output #dateoutput").text(newLocation.date);
+      $("#output #activitiesoutput").text(newLocation.activities);
+      $("#output #sleepoutput").text(newLocation.sleep);
+      $("#output #otheroutput").text(newLocation.other);
+    });
+
+    $("input#place").val("");
+    $("input#date").val("");
+    $("input#activities").val("");
+    $("input#sleep").val("");
+    $("input#other").val("");
   })
 })
