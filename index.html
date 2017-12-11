@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Oh The Places You've Gone</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Places You've Been</h1>
+      <form id="theform">
+        <div class="form-group">
+          <label for="place">Add a place!</label>
+          <input type="text" class="form-control" id="place">
+        </div>
+        <div class="form-group">
+          <label for="date">When did you go?</label>
+          <input type="date" class="form-control" id="date">
+        </div>
+        <div class="form-group">
+          <label for="activities">What did you do?</label>
+          <input type="text" class="form-control" id="activities">
+        </div>
+        <div class="form-group">
+          <label for="sleep">Where did you stay?</label>
+          <input type="text" class="form-control" id="sleep">
+        </div>
+        <div class="form-group">
+          <label for="other">Please add a brief description.</label>
+          <input type="text" class="form-control" id="other">
+        </div>
+      </form>
+      <div class="locationlist">
+        <h2>Where you've been:</h2>
+        <ul id="output">
+          <div class="showlocation">
+            <h2></h2>
+            <p>When you went: <span id="dateoutput"></span></p>
+            <p>What you did: <span id="activitiesoutput"></span></p>
+            <p>You stayed at: <span id="sleepoutput"></span></p>
+            <p>Description: <span id="otheroutput"></span></p>
+          </div>
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</html>
